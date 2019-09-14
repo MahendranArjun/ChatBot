@@ -1,3 +1,1 @@
-A classic example of association rule mining refers to a relationship between diapers and beers. The example, which seems to be fictional, claims that men who go to a store to buy diapers are also likely to buy beer. Data that would point to that might look like this:
-
-A supermarket has 200,000 customer transactions. About 4,000 transactions, or about 2% of total transactions, include the purchase of diapers. About 5,500 transactions (2.75%) include the purchase of beer. Of those, about 3,500 transactions, 1.75%, include both the purchase of diapers and beer. Based on the percentages, that number should be much lower. However, the fact that about 87.5% of diaper purchases include the purchase of beer indicates a link between diapers and beer.
+You have molecules, part of them are drugs and part are not but you do not know which are which and you want the algorithm to discover the drugs.
