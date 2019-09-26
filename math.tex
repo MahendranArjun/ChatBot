@@ -1,0 +1,174 @@
+\textbf{{\Large Linear regression slope (m) formula derivation}}
+
+
+
+
+
+
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+% Plotting does not support converting to Tikz
+%Straight Lines [id:da9178918068879118] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (250.3,133.2) -- (250.3,249.2) ;
+
+
+%Straight Lines [id:da21322150848132915] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (59.3,133.2) -- (250.3,133.2) ;
+
+
+%Shape: Boxed Line [id:dp9974708964174355] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (250.3,104.2) -- (250.3,133.2) ;
+
+
+%Straight Lines [id:da04005202392269824] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (59.3,104.2) -- (250.3,104.2) ;
+
+
+%Flowchart: Connector [id:dp7802287412901614] 
+\draw  [color={rgb, 255:red, 65; green, 117; blue, 5 }  ,draw opacity=1 ][fill={rgb, 255:red, 65; green, 117; blue, 5 }  ,fill opacity=1 ] (245.65,104.2) .. controls (245.65,101.63) and (247.73,99.55) .. (250.3,99.55) .. controls (252.87,99.55) and (254.95,101.63) .. (254.95,104.2) .. controls (254.95,106.77) and (252.87,108.85) .. (250.3,108.85) .. controls (247.73,108.85) and (245.65,106.77) .. (245.65,104.2) -- cycle ;
+%Flowchart: Connector [id:dp5805911748187815] 
+\draw  [color={rgb, 255:red, 65; green, 117; blue, 5 }  ,draw opacity=1 ][fill={rgb, 255:red, 65; green, 117; blue, 5 }  ,fill opacity=1 ] (245.65,133.2) .. controls (245.65,130.63) and (247.73,128.55) .. (250.3,128.55) .. controls (252.87,128.55) and (254.95,130.63) .. (254.95,133.2) .. controls (254.95,135.77) and (252.87,137.85) .. (250.3,137.85) .. controls (247.73,137.85) and (245.65,135.77) .. (245.65,133.2) -- cycle ;
+%Straight Lines [id:da25587303397323] 
+\draw    (116.3,105.2) -- (116.3,132.2) ;
+\draw [shift={(116.3,134.2)}, rotate = 270] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]  [draw opacity=0] (10.72,-5.15) -- (0,0) -- (10.72,5.15) -- (7.12,0) -- cycle    ;
+\draw [shift={(116.3,103.2)}, rotate = 90] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]  [draw opacity=0] (10.72,-5.15) -- (0,0) -- (10.72,5.15) -- (7.12,0) -- cycle    ;
+%Straight Lines [id:da4065575723047157] 
+\draw    (255.3,86.2) -- (277.13,55.82) ;
+\draw [shift={(278.3,54.2)}, rotate = 485.71] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+
+%Straight Lines [id:da6237328327829017] 
+\draw    (216.47,177.58) -- (238.3,147.2) ;
+
+\draw [shift={(215.3,179.2)}, rotate = 305.71] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+
+% Text Node
+\draw (280,144) node  [align=left] {};
+% Text Node
+\draw (276,145) node   {$\left( x_{i} ,\hat{y}\right)$};
+% Text Node
+\draw (281,98) node   {$( x_{i} ,y_{i})$};
+% Text Node
+\draw (151,119) node   {$\left( y_{i} -\hat{y}\right)$};
+% Text Node
+\draw (386,152) node   {$$};
+% Text Node
+\draw (393,56) node [rotate=-336.89]  {$\hat{y} =mx+c$};
+% Text Node
+\draw (296.3,41.2) node  [align=left] {Actual point};
+% Text Node
+\draw (184.3,196.2) node  [align=left] {Predict point};
+
+
+\end{tikzpicture}
+
+
+
+$\displaystyle S=\sum \left( y_{i} -\hat{y}\right)^{2}$
+
+
+
+$\displaystyle \hat{y} =mx+c$
+
+
+
+$\displaystyle S=\sum ( y_{i} -( mx_{i} +c))^{2}$
+
+
+
+
+
+Apply partial differential with respective c
+
+
+
+$\displaystyle  \begin{array}{{>{\displaystyle}l}}
+\frac{\partial S}{\partial c} =\frac{\partial }{\partial c}\sum ( y_{i} -( mx_{i} +c))^{2}\\
+\\
+\ \ \ \ \ =2\times \sum \left(( y_{i} -( mx_{i} +c)) \times \frac{\partial }{\partial c}( y_{i} -( mx+c))\right)\\
+\\
+\ \ \ \ \ =2\times \sum ( y_{i} -( mx_{i} +c)) \times ( -1) \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \therefore \ \frac{\partial }{\partial c}( y_{i} -( mx_{i} +c) =-1\\
+\\
+\ \ \ \ \ =-2\times \sum ( y_{i} -( mx_{i} +c))
+\end{array}$
+
+
+
+ Apply partial differential with respective m
+
+
+
+$\displaystyle  \begin{array}{{>{\displaystyle}l}}
+\frac{\partial S}{\partial m} =\frac{\partial }{\partial m}\sum ( y_{i} -( mx_{i} +c))^{2}\\
+\\
+\ \ \ \ \ =2\times \sum \left(( y_{i} -( mx_{i} +c)) \times \frac{\partial }{\partial m}( y_{i} -( mx_{i} +c))\right)\\
+\\
+\ \ \ \ \ =2\times \sum ( y_{i} -( mx_{i} +c)) \times ( -x_{i}) \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \therefore \ \frac{\partial }{\partial m}( y_{i} -( mx_{i} +c) =-x_{i}\\
+\\
+\ \ \ \ \ =-2\times \sum x_{i}( y_{i} -( mx_{i} +c))
+\end{array}$
+
+
+
+
+
+ Partial derivatives equal to 0
+
+
+
+$ $$\displaystyle  \begin{array}{{>{\displaystyle}l}}
+\frac{\partial S}{\partial c} =-2\times \sum ( y_{i} -( mx_{i} +c)) =0\\
+\\
+\frac{\partial S}{\partial m} =-2\times \sum x_{i}( y_{i} -( mx_{i} +c)) =0
+\end{array}$
+
+
+
+
+
+Find c (intercept)
+
+
+
+$\displaystyle  \begin{array}{{>{\displaystyle}l}}
+\frac{\ \partial S}{\partial c} =0=\sum ( y_{i} -( mx_{i} +c))\\
+\ \ \ \\
+\ \ \ \ \ \ \ \ \ \ \ \ \ =\sum y_{i} -\sum mx_{i} -\sum c\\
+\\
+\ \ \ \ \ \ \ \ \ \ \ \ \ =\sum y_{i} -\sum mx_{i} -nc\\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \\
+\ \ \ \ \ \ \ \ \ nc=\sum y_{i} -\sum mx_{i}\\
+\\
+\ \ \ \ \ \ \ \ \ \ \ c=\frac{\sum y_{i}}{n} -m\frac{\sum x_{i}}{n} \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \\
+\ \ \ \ \ \ \ \ \ \ \ c=\overline{y} -m\overline{x} \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \therefore \ \ \frac{\sum y_{i}}{n} =\overline{y} \ \ \ ;\ \ \ \frac{\sum x_{i}}{n} =\overline{x} \ \ \ \\
+\end{array}$
+
+
+
+Find m (slope)
+
+
+
+$\displaystyle  \begin{array}{{>{\displaystyle}l}}
+\frac{\partial S}{\partial m} =0=\sum x_{i}( y_{i} -( mx_{i} +c))\\
+\\
+\ \ \ \ \ \ \ \ \ \ \ \ \ =\sum x_{i}( y_{i} -\left( mx_{i} +\left(\overline{y} -m\overline{x}\right)\right)\\
+\\
+\ \ \ \ \ \ \ \ \ \ \ \ =\sum x_{i}\left( y_{i} -\overline{y} -mx_{i} +m\overline{x}\right)\\
+\\
+\ \ \ \ \ \ \ \ \ \ \ \ =\sum x_{i}\left( y_{i} -\overline{y}\right) -m\sum x_{i}\left( x_{i} +\overline{x}\right)\\
+\\
+m\sum x_{i}\left( x_{i} +\overline{x}\right) =\sum x_{i}\left( y_{i} -\overline{y}\right)\\
+\\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m=\frac{\sum x_{i}\left( y_{i} -\overline{y}\right)}{\sum x_{i}\left( x_{i} +\overline{x}\right)}\\
+\\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m=\frac{\sum x_{i}\left( y_{i} -\overline{y}\right) +\sum \overline{x}\left( y_{i} -\overline{y}\right)}{\sum x_{i}\left( x_{i} +\overline{x}\right) +\sum \overline{x}\left( x_{i} -\overline{x}\right)} \ \ \ \ \ \therefore \sum \overline{x}\left( y_{i} -\overline{y}\right) =0\ \ ;\ \sum \overline{x}\left( x_{i} -\overline{x}\right) =0\\
+\\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m=\frac{\sum \left( x_{i} y_{i} -x_{i}\overline{y} +\overline{x} y_{i} -\overline{x}\overline{y}\right)}{\sum \left( x^{2}_{i} +2x_{i}\overline{x} -\overline{x}^{2}\right)}\\
+\\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m=\frac{\sum \left( x_{i} -\overline{x}\right)\left( y_{i} -\overline{y}\right)}{\sum \left( x_{i} -\overline{x}\right)}
+\end{array}$
